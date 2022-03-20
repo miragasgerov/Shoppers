@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31729.503
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shoppers-BackEnd-Final", "Shoppers-BackEnd-Final\Shoppers-BackEnd-Final.csproj", "{8B6FC3E3-44CD-4825-8E64-0C2504CFF3E6}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{8B6FC3E3-44CD-4825-8E64-0C2504CFF3E6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8B6FC3E3-44CD-4825-8E64-0C2504CFF3E6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8B6FC3E3-44CD-4825-8E64-0C2504CFF3E6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8B6FC3E3-44CD-4825-8E64-0C2504CFF3E6}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {037DC708-B61A-422A-95FA-98E4CA7924DE}
+	EndGlobalSection
+EndGlobal

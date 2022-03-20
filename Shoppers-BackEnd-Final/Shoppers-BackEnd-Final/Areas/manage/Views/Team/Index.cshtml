@@ -1,0 +1,70 @@
+﻿@using X.PagedList
+@using X.PagedList.Mvc.Core
+@using X.PagedList.Web.Common
+@model IPagedList<Team>
+
+@{
+int count = 0;
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-12">
+            <h1 style="display:inline-block">Authors</h1>
+            <a asp-action="create" style="float:right" class="btn btn-primary">Create new</a>
+        </div>
+        <div class="col-lg-12">
+            <table class="table">
+                <thead class="thead-light">
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Image</th>
+                        <th scope="col">Text</th>
+                        <th scope="col">Position</th>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach(Team item in Model)
+                    {
+                        count++;
+                    <tr>
+                        <th scope="row">@count</th>
+                        <td>@item.Title</td>
+                        <td>
+                            <img src="~/uploads/teams/@item.Image" width="100" />
+                        </td>
+                        <td>@item.Text</td>
+                        <td>@item.Position</td>
+
+
+                        <td>
+                            <a asp-action="edit" asp-route-id="@item.Id" class="btn btn-warning">Edit</a>
+                            <a asp-action="delete" asp-route-id="@item.Id" class="btn btn-danger">Delete</a>
+                        </td>
+                    </tr>
+                    }
+
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+<div class="pull-right d-flex justify-content-center">
+    @Html.PagedListPager((IPagedList)Model, page => Url.Action("Index", new { page }),
+
+    new PagedListRenderOptions
+    {
+      LiElementClasses = new string[] { "page-item" },
+      PageClasses = new string[] { "page-link" },
+      Display = PagedListDisplayMode.IfNeeded
+
+    })
+</div>

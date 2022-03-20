@@ -1,0 +1,112 @@
+﻿@model MemberRegisterViewModel
+@{
+    ViewData["Title"] = "Register";
+}
+
+<main>
+    <section class="breadCrumb">
+        <div class="container">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mt-3">
+                        <li class="breadcrumb-item active"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item" aria-current="page">Sign Up</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <section class="userLogin">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-lg-3"></div>
+
+
+                <div class="col-lg-3">
+                    <div class="signInUser">
+                        <h1>Sign up</h1>
+                        <form asp-action="register" method="post">
+
+                            <div class="usernameInput mb-3 d-flex align-items-center mt-5">
+                                <i class="fa-solid fa-user"></i>
+                                <input asp-for="UserName" class="form-control" placeholder="Your Username">
+                            </div>
+                            <span asp-validation-for="UserName" class="text-danger"></span>
+
+                            <div class="usernameInput mb-3 d-flex align-items-center mt-3">
+                                <i class="fa-solid fa-user"></i>
+                                <input asp-for="FullName" class="form-control" placeholder="Your Fullname">
+                            </div>
+                            <span asp-validation-for="FullName" class="text-danger"></span>
+
+
+                            <div class="emailInput mb-3 d-flex align-items-center mt-3">
+                                <i class="fa-solid fa-envelope"></i>
+                                <input asp-for="Email" class="form-control" placeholder="Your Email">
+                            </div>
+                            <span asp-validation-for="Email" class="text-danger"></span>
+
+
+                            <div class="passwordInput mb-3 d-flex align-items-center mt-3">
+                                <i class="fa-solid fa-lock"></i>
+                                <input asp-for="Password" class="form-control" placeholder="Password">
+                            </div>
+                            <span asp-validation-for="Password" class="text-danger"></span>
+
+
+                            <div class="passwordInputSec mb-3 d-flex align-items-center mt-3">
+                                <i class="fa-solid fa-lock"></i>
+                                <input asp-for="RepeatPassword" class="form-control" placeholder="Repeat Your Password">
+                            </div>
+                            <span asp-validation-for="RepeatPassword" class="text-danger"></span>
+
+
+                            <div class="col-12 loginInput">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                                    <label class="form-check-label" for="flexCheckDefault">
+                                        I agree all statements in Terms of service
+
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+                            <div class="loginBtn">
+                                <button type="submit" class="btn mt-5 ">Register</button>
+
+                            </div>
+                        </form>
+
+                       
+                    </div>
+
+                </div>
+
+                <div class="col-lg-6">
+                    <div class="userImg d-flex justify-content-center ">
+                        <img src="~/img/signUp.jpg">
+
+                    </div>
+
+                    <div class="signUpText d-flex justify-content-center ">
+                        <a href="#">Create an account</a>
+                    </div>
+
+
+                </div>
+
+
+
+
+            </div>
+        </div>
+    </section>
+
+</main>
+
+@section Scripts {
+ @await Html.PartialAsync("_ValidationScriptsPartial")
+}

@@ -1,0 +1,68 @@
+﻿@model List<Size>
+@{
+    ViewData["Title"] = "Index";
+    int count = 0;
+}
+
+<div class="container">
+    <h1 style="margin-top:1rem">Size</h1>
+    <a style="margin-bottom:1rem" class="btn btn-primary" asp-action="create">New Size</a><div class="col-lg-12">
+        <div class="col-lg-12">
+            <form method="get" asp-action="index" class="my-3">
+                <div class="row d-flex align-items-center">
+                    <div class="col-xl-3">
+                        <select class="form-control" name="deleted">
+                            <option value="">
+                                All Size
+                            </option>
+                            <option value="true">Deleted Size</option>
+                        </select>
+                    </div>
+                    <div class="col-xl-6">
+                        <input type="text" name="search" class="form-control filter" autocomplete="off" value="@ViewBag.search" id="exampleInputEmail1" placeholder="Search..." />
+                    </div>
+                    <button type="submit" class="btn btn-secondary my-2">Search</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Name</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                count++;
+                if (item.IsDeleted == true)
+                {
+                    <tr>
+                        <th scope="row">@count</th>
+                        <td style="color:red">@item.Name</td>
+                        <td><a class="btn btn-success berpa-btn" data-id="@item.Id" data-name="size" asp-route-id="@item.Id">Edit</a></td>
+
+                    </tr>
+ }
+                else
+                {
+                    <tr>
+                        <th scope="row">@count</th>
+                        <td>@item.Name</td>
+                        <td><a class="btn btn-success" asp-action="edit" asp-route-id="@item.Id">Edit</a></td>
+                        <td><a class="btn btn-danger delete-btn" data-id="@item.Id" data-name="size" asp-route-id="@item.Id">Delete</a></td>
+
+                    </tr>
+           }
+            }
+
+        </tbody>
+    </table>
+</div>

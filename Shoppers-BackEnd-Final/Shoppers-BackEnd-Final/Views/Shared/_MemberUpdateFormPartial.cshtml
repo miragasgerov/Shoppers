@@ -1,0 +1,43 @@
+﻿@model MemberUpdateViewModel
+
+<form asp-action="profileDetail" method="post">
+
+    <div class="row mt-2">
+        <div class="col-6">
+            <label for="inputUsername" class="form-label">Username</label>
+            <input asp-for="UserName" class="form-control" placeholder="Username" aria-label="Username" id="inputUsername">
+            <span class="text-danger" asp-validation-for="UserName"></span>
+        </div>
+        <div class="col-6">
+            <label for="inputFullName" class="form-label">Fullname</label>
+            <input asp-for="FullName" class="form-control" placeholder="Full name" aria-label="Full name" id="inputFullName">
+            <span class="text-danger" asp-validation-for="FullName"></span>
+        </div>
+        <div class="col-6 mt-5">
+            <label for="inputEmail4" class="form-label">Email</label>
+            <input asp-for="Email" class="form-control" id="inputEmail4" placeholder="Your Email">
+            <span class="text-danger" asp-validation-for="Email"></span>
+        </div>
+        <div class="col-6 mt-5">
+            <label for="inputPassword3" class="form-label">Current Password</label>
+            <input asp-for="CurrentPassword" type="password" class="form-control" id="inputPassword3">
+            <span class="text-danger" asp-validation-for="CurrentPassword"></span>
+        </div>
+        <div class="col-6 mt-5">
+            <label for="inputPassword4" class="form-label">New Password</label>
+            <input asp-for="Password" type="password" class="form-control" id="inputPassword4">
+            <span class="text-danger" asp-validation-for="Password"></span>
+        </div>
+        <div class="col-6 mt-5">
+            <label for="inputChangePassword4" class="form-label">Confirm Password</label>
+            <input asp-for="RepeatPassword" type="password" class="form-control" id="inputChangePassword4">
+            <span class="text-danger" asp-validation-for="RepeatPassword"></span>
+        </div>
+
+        <div class="text-danger" asp-validation-summary="ModelOnly"></div>
+
+        <div class="saveChangesBtn col-3">
+            <button type="submit"> Save Changes</button>
+        </div>
+    </div>
+</form>

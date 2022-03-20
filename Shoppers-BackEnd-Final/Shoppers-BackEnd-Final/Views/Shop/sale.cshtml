@@ -1,0 +1,153 @@
+﻿@model List<Product>
+    <main>
+        <section class="breadCrumb">
+            <div class="container">
+                <div class="row">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mt-3">
+                            <li class="breadcrumb-item active"><a href="#">Home</a></li>
+                            <li class="breadcrumb-item" aria-current="page">Shop</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="shop">
+            <div class="container">
+                <div class="row">
+
+
+                    <div class="col-lg-12">
+
+                        <div class="topShop d-flex">
+                            <div class="shopText">
+                                <h5>Shop All</h5>
+                            </div>
+                            <div class="shopDown dropdown ms-auto">
+                                <a class="shopBtn btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Latest
+                                </a>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Men</a></li>
+                                    <li><a class="dropdown-item" href="#">Women</a></li>
+                                    <li><a class="dropdown-item" href="#">Children</a></li>
+                                </ul>
+                            </div>
+
+                            <div class=" shopDown dropdown ms-3">
+                                <a class=" shopBtn btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                    Reference
+                                </a>
+
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                    <li><a class="dropdown-item" href="#">Relevance</a></li>
+                                    <li><a class="dropdown-item" href="#">Name, A to Z</a></li>
+                                    <li><a class="dropdown-item" href="#">Name, Z to A</a></li>
+                                    <li><a class="dropdown-item" href="#">Price, Low to High</a></li>
+                                    <li><a class="dropdown-item" href="#">Price, High to Low</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            @foreach (var item in Model)
+                            {
+                                if(item.IsDeleted == false)
+                                {
+                                    <div class="col-lg-4 d-flex justify-content-center mt-5">
+                                        <a href="shop-detail.html">
+                                            <div class="card">
+                                                <img src="~/uploads/product/@item.ProductImages.FirstOrDefault(x=>x.IsPoster==true)?.Image" class="card-img-top" alt="...">
+                                                <div class="card-body text-center">
+                                                    <h5 class="card-title">@item.Name</h5>
+                                                    <p class="card-text">@item.Title</p>
+                                                    <h5 class="card-title">@(item.SalePrice.ToString("#.##"))₼</h5>
+                                                </div>
+                                            </div>
+                                        </a>
+
+                                    </div>
+
+                                }
+                            }
+
+                        </div>
+
+
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination d-flex justify-content-center mt-5">
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Previous">
+                                        <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                </li>
+                                <li class="page-item active" style="color: white !important;"><a class="page-link" href="#">1</a></li>
+                                <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                                <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                        <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                </li>
+                            </ul>
+                        </nav>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h4 class="text-center">Categories</h4>
+                    </div>
+                </div>
+                <div class="row mt-5">
+
+                    <div class="categoriesCard col-lg-4 d-flex justify-content-center  mt-3">
+                        <div class="catalogueImg">
+                            <img src="~/img/cataloge3.jpg">
+                        </div>
+                        <div class="catalogueText">
+                            <h6>Collections</h6>
+                            <h2>Women</h2>
+                        </div>
+                    </div>
+
+                    <div class="categoriesCard col-lg-4 d-flex justify-content-center  mt-3">
+                        <div class="catalogueImg">
+                            <img src="~/img/cataloge2.jpg">
+                        </div>
+                        <div class="catalogueText">
+                            <h6>Collections</h6>
+                            <h2>Children</h2>
+                        </div>
+                    </div>
+
+                    <div class="categoriesCard col-lg-4 d-flex justify-content-center  mt-3">
+                        <div class="catalogueImg">
+                            <img src="~/img/cataloge1.jpg">
+                        </div>
+                        <div class="catalogueText">
+                            <h6>Collections</h6>
+                            <h2>Men</h2>
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </section>
+
+        <hr>
+
+    </main>

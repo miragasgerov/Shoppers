@@ -1,0 +1,676 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Shoppers</title>
+    <link rel="stylesheet" href="lib/assets/owl.carousel.min.css">
+    <link rel="stylesheet" href="lib/assets/owl.theme.default.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha512-9usAa10IRO0HhonpyAIVpjrylPvoDwiPUiKdWk5t3PyolY1cOd4DSE0Ga+ri4AuTroPR5aQvXU9xC6qOPnzFeg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+  <header>
+    <div class="container" >
+        <duv class="row">
+            <div class=" brand col-lg-12">
+                    <a class="navbar-brand text-center" href="#">Shoppers</a>
+            </div>
+        </duv>
+        <div class="row">
+            <div class="col-lg-12">
+                <nav class="navbar navbar-expand-lg navbar-light">
+
+                 <div class="navForm col-lg-6 ">
+                    <form class="d-flex align-items-center">
+                        <i id="searchBtn" class="fa-solid fa-magnifying-glass"></i>
+                        <input class="form-control me-2" type="search" aria-label="Search" id="searchInput">
+                        <label id="searchLabel">Search </label>
+                    </form>
+
+                 </div>
+
+                 
+
+
+
+                   <div class="navIcon  col-lg-6 d-flex">
+                     
+                          <ul class="navbar-nav ms-auto mb-2 mb-lg-0 ">
+
+
+                          
+
+                            <li class="nav-item pe-2">
+                              <div class="dropdown">
+                                <a class="nav-link active" aria-current="page" href="#">
+                                  <i class="fa-solid fa-user"></i>
+                              </a>
+                              
+                              <div class="dropdown-content">
+                                  <a href="login.html">Login</a>
+                                  <a href="signup.html">Sign up</a>
+                                  <a href="profile.html">Profile</a>
+                                </div>
+                              </div>
+                              </li>
+
+
+                              
+
+                              <li class="nav-item pe-2">
+                                <a class="nav-link" href="wishlist.html">
+                                    <i class="fa-solid fa-heart"></i>
+                                </a>
+                              </li>
+                            
+                              <li class="nav-item pe-2 basketBarHover">
+                                <a class="nav-link" href="#">
+                                    <i class="fa-solid fa-cart-shopping" id="basketIconHover" ></i>
+                                </a>
+
+
+                               <div class="shopNum">
+                                 <span>1</span>
+                               </div>
+
+
+                                <div class="shoppingBar mt-3" id="shoppingBar">
+                                
+                                    <div class="shoppingBarSec d-flex">
+                                        <div class="shoppingBarImg">
+                                            <img src="./img/cloth1.jpg" class="img-fluid">
+                                        </div>
+
+                                        <div class="shoppingBarText ms-4 d-flex">
+                                            <div class="shoppingBarLeftText">
+                                                <h6>Top Up T-Shirt </h6>
+                                                <p><span class="me-2">1x</span>50$</p>
+                                            </div>
+                                            <div class="shoppingBarBtn mt-5">
+                                                <button type="button" class="heroBtn" style="width: 30px; height: 30px;">X</button>
+
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="shoppingBarBottom d-flex">
+                                        <a href="cart.html" class="mt-1">
+                                            View Cart
+                                            <i class="fa-solid fa-arrow-right"></i>
+                                        </a>
+
+                                        <a href="checkout.html" class="ms-auto checkShopBar">
+                                             Checkout
+                                             <i class="fa-solid fa-arrow-right "></i>
+                                        </a>
+                                    </div>
+                                    
+                                </div>
+
+                              </li>
+
+                              
+                           </ul>
+                           
+                           <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                            <span class="navbar-toggler-icon"></span>
+                           </button>
+                          
+                  </div>
+
+                  
+
+                  
+
+
+                  </nav>
+            </div>
+
+            
+        </div>
+
+    </div>
+
+
+    <div class="container">
+
+        <div class="row">
+            <div class="col-lg-12">
+                <div class="menu mt-2">
+                    <nav class="navbar navbar-expand-lg navbar-light">
+                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+                              <li class="nav-item">
+                                <a class="nav-link" href="index.html">Home</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="about.html">About</a>
+                              </li>
+
+                              <li class="nav-item">
+                                <a class="nav-link" href="shop.html">Shop</a>
+                              </li>
+                              <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Contact</a>
+                              </li>
+                            </ul>
+                           
+                          </div>
+                      </nav>
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+</header>
+
+    <main>
+        <section class="breadCrumb">
+            <div class="container">
+                <div class="row">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb mt-3">
+                          <li class="breadcrumb-item active"><a href="#">Home</a></li>
+                          <li class="breadcrumb-item" aria-current="page">Shop</li>
+                        </ol>
+                      </nav>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="shop">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-3">
+                        <div class="border p-4 rounded">
+                            <h5>categories</h5>
+                            <ul class="shopList">
+                                <li class="mt-3">
+                                    <a href="#">
+                                    <span id="menSpan"> Men </span>
+                                    <span class="secondSpan"> (2220) </span>
+                                    </a>
+                                    <ul class="ms-3 secondList" id="menListCategory">
+                                      <li><a href="#">Salvar</a></li>
+                                      <li><a href="#">Kofta</a></li>
+                                    </ul>
+                                </li>
+                                <li class="mt-3">
+                                    <a href="#">
+                                        <span id="womenSpan"> Women </span>
+                                        <span class="secondSpan"> (2550) </span>
+                                    </a>
+                                    <ul class="ms-3 secondList" id="womenListCategory">
+                                      <li><a href="#">Salvar</a></li>
+                                      <li><a href="#">Kofta</a></li>
+                                      <li><a href="#">Yupka</a></li>
+                                    </ul>
+                                </li>
+                                <li class="mt-3 secondList">
+                                    <a href="#">
+                                        <span id="childrenSpan"> Children </span>
+                                        <span class="secondSpan"> (2124) </span>
+                                    </a>
+                                    <ul class="ms-3" id="childrenListCategory">
+                                      <li><a href="#">Salvar</a></li>
+                                      <li><a href="#">Kofta</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="border p-4 rounded mt-5">
+                           <h5>Filter By Price</h5>
+
+                            <div class="card-body mt-4">
+                              <form id="price-range-form">
+                                <label for="min-price" class="form-label">Min price: </label>
+                                <span id="min-price-txt">$0</span>
+                                <input type="range" class="form-range" min="0" max="999" id="min-price" step="1" value="0">
+                                <label for="max-price" class="form-label">Max price: </label>
+                                <span id="max-price-txt">$1000</span>
+                                <input type="range" class="form-range" min="1" max="1000" id="max-price" step="1" value="100">
+                              </form>
+                            </div>
+
+                           
+                        
+
+
+
+                           <h6>Size</h6>
+
+                           <ul class="mt-3">
+                               <li>  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">Small (2,319)</li>
+                               <li>  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">Medium (1,282)</li>
+                               <li>  <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">Large (1,392)</li>
+
+                           </ul>
+
+                           <h6>Color</h6>
+
+                                <a class="dots mt-1">
+                                    <span class="dotRed dot"></span>
+                                    <span class="ms-3">Red (2,429)</span>
+                                </a>
+
+                                <a class="dots mt-1">
+                                    <span class="dotGreen dot"></span>
+                                    <span class="ms-3">Green (2,429)</span>
+                                </a>
+
+                                <a class="dots mt-1">
+                                    <span class="dotBlue dot"></span>
+                                    <span class="ms-3">Blue (2,429)</span>
+                                </a>
+
+                                <a class="dots mt-1">
+                                    <span class="dotPurple dot"></span>
+                                    <span class="ms-3">Purple (2,429)</span>
+                                </a>
+
+
+
+                        </div>
+                    </div>
+
+                    <div class="col-lg-9">
+                       
+                        <div class="topShop d-flex">
+                            <div class="shopText">
+                                <h5>Shop All</h5>
+                            </div>
+                            <div class="shopDown dropdown ms-auto">
+                                <a class="shopBtn btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Latest
+                                </a>
+                              
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                  <li><a class="dropdown-item" href="#">Men</a></li>
+                                  <li><a class="dropdown-item" href="#">Women</a></li>
+                                  <li><a class="dropdown-item" href="#">Children</a></li>
+                                </ul>
+                            </div>
+
+                            <div class=" shopDown dropdown ms-3">
+                                <a class=" shopBtn btn btn-secondary dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-bs-toggle="dropdown" aria-expanded="false">
+                                  Reference
+                                </a>
+                              
+                                <ul class="dropdown-menu" aria-labelledby="dropdownMenuLink">
+                                  <li><a class="dropdown-item" href="#">Relevance</a></li>
+                                  <li><a class="dropdown-item" href="#">Name, A to Z</a></li>
+                                  <li><a class="dropdown-item" href="#">Name, Z to A</a></li>
+                                  <li><a class="dropdown-item" href="#">Price, Low to High</a></li>
+                                  <li><a class="dropdown-item" href="#">Price, High to Low</a></li>
+
+                                </ul>
+                            </div>
+                        </div>
+
+                        <div class="row justify-content-center">
+                            <div class="shopCard col-lg-4 d-flex justify-content-center mt-5">
+                                <a href="shop-detail.html">
+                                  <div class="card">
+                                    <img src="./img/cloth1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                      <h5 class="card-title">Tank Top</h5>
+                                      <p class="card-text">Finding perfect t-shirt</p>
+                                      <h5 class="card-title">$50</h5>
+                                    </div>
+                                  </div>
+                                </a>
+
+                                <div class="shopHoverBtn">
+                                  <i class="fa-solid fa-heart"></i>
+                                  <i class="fa-solid fa-basket-shopping"></i>
+                                </div>
+              
+                              </div>
+
+                              <div class="shopCard col-lg-4 d-flex justify-content-center mt-5">
+                                 
+                                <a href="shop-detail.html">
+                                  <div class="card">
+                                    <img src="./img/cloth2.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                      <h5 class="card-title">Corater</h5>
+                                      <p class="card-text">Finding perfect products</p>
+                                      <h5 class="card-title">$50</h5>
+                                    </div>
+                                  </div>
+                                </a>
+                                <div class="shopHoverBtn">
+                                  <i class="fa-solid fa-heart"></i>
+                                  <i class="fa-solid fa-basket-shopping"></i>
+                                </div>
+              
+                              </div>
+
+                              <div class="shopCard col-lg-4 d-flex justify-content-center mt-5">
+                               
+                                <a href="shop-detail.html">
+                                  <div class="card">
+                                    <img src="./img/cloth3.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                      <h5 class="card-title">Polo Shirt</h5>
+                                      <p class="card-text">Finding perfect products</p>
+                                      <h5 class="card-title">$50</h5>
+                                    </div>
+                                  </div>
+                                </a>
+              
+                                <div class="shopHoverBtn">
+                                  <i class="fa-solid fa-heart"></i>
+                                  <i class="fa-solid fa-basket-shopping"></i>
+                                </div>
+                              </div>
+
+                              <div class="shopCard col-lg-4 d-flex justify-content-center  mt-5">
+                                <a href="shop-detail.html">
+                                  <div class="card">
+                                    <img src="./img/cloth4.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                      <h5 class="card-title">T-Shirt Mockup</h5>
+                                      <p class="card-text">Finding perfect products</p>
+                                      <h5 class="card-title">$50</h5>
+                                    </div>
+                                  </div>
+                                </a>
+                                <div class="shopHoverBtn">
+                                  <i class="fa-solid fa-heart"></i>
+                                  <i class="fa-solid fa-basket-shopping"></i>
+                                </div>
+                              </div>
+
+                              <div class="shopCard col-lg-4 d-flex justify-content-center mt-5">
+                                <a href="shop-detail.html">
+                                  <div class="card">
+                                    <img src="./img/cloth1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                      <h5 class="card-title">Tank Top</h5>
+                                      <p class="card-text">Finding perfect t-shirt</p>
+                                      <h5 class="card-title">$50</h5>
+                                    </div>
+                                  </div>
+                                </a>
+                                <div class="shopHoverBtn">
+                                  <i class="fa-solid fa-heart"></i>
+                                  <i class="fa-solid fa-basket-shopping"></i>
+                                </div>
+                              </div>
+
+                              <div class="shopCard col-lg-4 d-flex justify-content-center mt-5">
+                                 
+                                <a href="shop-detail.html">
+                                  <div class="card">
+                                    <img src="./img/cloth2.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                      <h5 class="card-title">Corater</h5>
+                                      <p class="card-text">Finding perfect products</p>
+                                      <h5 class="card-title">$50</h5>
+                                    </div>
+                                  </div>
+                                </a>
+                               
+                                <div class="shopHoverBtn">
+                                  <i class="fa-solid fa-heart"></i>
+                                  <i class="fa-solid fa-basket-shopping"></i>
+                                </div>
+                              </div>
+
+                              <div class="shopCard col-lg-4 d-flex justify-content-center mt-5">
+                               
+                                <a href="shop-detail.html">
+                                  <div class="card">
+                                    <img src="./img/cloth3.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                      <h5 class="card-title">Polo Shirt</h5>
+                                      <p class="card-text">Finding perfect products</p>
+                                      <h5 class="card-title">$50</h5>
+                                    </div>
+                                  </div>
+                                </a>
+                                <div class="shopHoverBtn">
+                                  <i class="fa-solid fa-heart"></i>
+                                  <i class="fa-solid fa-basket-shopping"></i>
+                                </div>
+                              </div>
+
+                              <div class="shopCard col-lg-4 d-flex justify-content-center  mt-5">
+                                <a href="shop-detail.html">
+                                  <div class="card">
+                                    <img src="./img/cloth4.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                      <h5 class="card-title">T-Shirt Mockup</h5>
+                                      <p class="card-text">Finding perfect products</p>
+                                      <h5 class="card-title">$50</h5>
+                                    </div>
+                                  </div>
+                                </a>
+                                <div class="shopHoverBtn">
+                                  <i class="fa-solid fa-heart"></i>
+                                  <i class="fa-solid fa-basket-shopping"></i>
+                                </div>
+                              </div>
+                              <div class="shopCard col-lg-4 d-flex justify-content-center mt-5">
+                                <a href="shop-detail.html">
+                                  <div class="card">
+                                    <img src="./img/cloth1.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                      <h5 class="card-title">Tank Top</h5>
+                                      <p class="card-text">Finding perfect t-shirt</p>
+                                      <h5 class="card-title">$50</h5>
+                                    </div>
+                                  </div>
+                                </a>
+                                <div class="shopHoverBtn">
+                                  <i class="fa-solid fa-heart"></i>
+                                  <i class="fa-solid fa-basket-shopping"></i>
+                                </div>
+                              </div>
+
+                              <div class="shopCard col-lg-4 d-flex justify-content-center mt-5">
+                                 
+                                <a href="shop-detail.html">
+                                  <div class="card">
+                                    <img src="./img/cloth2.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                      <h5 class="card-title">Corater</h5>
+                                      <p class="card-text">Finding perfect products</p>
+                                      <h5 class="card-title">$50</h5>
+                                    </div>
+                                  </div>
+                                </a>
+                               
+                                <div class="shopHoverBtn">
+                                  <i class="fa-solid fa-heart"></i>
+                                  <i class="fa-solid fa-basket-shopping"></i>
+                                </div>
+                              </div>
+
+                              <div class="shopCard col-lg-4 d-flex justify-content-center mt-5">
+                               
+                                <a href="shop-detail.html">
+                                  <div class="card">
+                                    <img src="./img/cloth3.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                      <h5 class="card-title">Polo Shirt</h5>
+                                      <p class="card-text">Finding perfect products</p>
+                                      <h5 class="card-title">$50</h5>
+                                    </div>
+                                  </div>
+                                </a>
+                                <div class="shopHoverBtn">
+                                  <i class="fa-solid fa-heart"></i>
+                                  <i class="fa-solid fa-basket-shopping"></i>
+                                </div>
+                              </div>
+
+                              <div class="shopCard col-lg-4 d-flex justify-content-center  mt-5">
+                                <a href="shop-detail.html">
+                                  <div class="card">
+                                    <img src="./img/cloth4.jpg" class="card-img-top" alt="...">
+                                    <div class="card-body text-center">
+                                      <h5 class="card-title">T-Shirt Mockup</h5>
+                                      <p class="card-text">Finding perfect products</p>
+                                      <h5 class="card-title">$50</h5>
+                                    </div>
+                                  </div>
+                                </a>
+                                <div class="shopHoverBtn">
+                                  <i class="fa-solid fa-heart"></i>
+                                  <i class="fa-solid fa-basket-shopping"></i>
+                                </div>
+                              </div>
+                        </div>
+
+
+                        <nav aria-label="Page navigation example">
+                            <ul class="pagination d-flex justify-content-center mt-5">
+                              <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Previous">
+                                  <span aria-hidden="true">&laquo;</span>
+                                </a>
+                              </li>
+                              <li class="page-item active" style="color: white !important;"><a class="page-link" href="#">1</a></li>
+                              <li class="page-item"><a class="page-link" href="#">2</a></li>
+                              <li class="page-item"><a class="page-link" href="#">3</a></li>
+                              <li class="page-item"><a class="page-link" href="#">4</a></li>
+                              <li class="page-item"><a class="page-link" href="#">5</a></li>
+
+                              <li class="page-item">
+                                <a class="page-link" href="#" aria-label="Next">
+                                  <span aria-hidden="true">&raquo;</span>
+                                </a>
+                              </li>
+                            </ul>
+                          </nav>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="categories">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <h4 class="text-center">Categories</h4>
+                    </div>
+                </div>
+              <div class="row mt-5">
+    
+                <div class="categoriesCard col-lg-4 d-flex justify-content-center  mt-3">
+                  <div class="catalogueImg">
+                    <img src="./img/cataloge3.jpg">
+                  </div>
+                  <div class="catalogueText">
+                    <h6>Collections</h6>
+                    <h2>Women</h2>
+                  </div>
+                </div>
+    
+                <div class="categoriesCard col-lg-4 d-flex justify-content-center  mt-3">
+                  <div class="catalogueImg">
+                    <img src="./img/cataloge2.jpg">
+                  </div>
+                  <div class="catalogueText">
+                    <h6>Collections</h6>
+                    <h2>Children</h2>
+                  </div>
+                </div>
+    
+                <div class="categoriesCard col-lg-4 d-flex justify-content-center  mt-3">
+                  <div class="catalogueImg">
+                    <img src="./img/cataloge1.jpg">
+                  </div>
+                  <div class="catalogueText">
+                    <h6>Collections</h6>
+                    <h2>Men</h2>
+                  </div>
+                </div>
+    
+    
+              </div>
+            </div>
+        </section>
+
+          <hr>
+
+    </main>
+
+    <footer>
+        <div class="container">
+          <div class="row">
+            <div class="col-lg-2 mt-3">
+              <h5>Navigations</h5>
+              <ul>
+                <li> <a href="#"> Sell online </a> </li>
+                <li> <a href="#"> Features </a> </li>
+                <li> <a href="#"> Shopping cart </a> </li>
+                <li> <a href="#"> Store builder</a> </li>
+  
+              </ul>
+            </div>
+            <div class="col-lg-2 mt-3">
+              <ul class="footerList">
+                <li> <a href="#"> Mobile commerce </a> </li>
+                <li> <a href="#"> Dropshipping </a> </li>
+                <li> <a href="#"> Website development </a> </li>
+  
+              </ul>
+            </div>
+            <div class="col-lg-2 mt-3">
+              <ul class="footerList">
+                <li> <a href="#"> Mobile commerce </a> </li>
+                <li> <a href="#"> Dropshipping </a> </li>
+                <li> <a href="#"> Website development </a> </li>
+  
+              </ul>
+            </div>
+  
+            <div class="footerImgColumn col-lg-3 mt-3">
+              <h5>Promo</h5>
+              <img src="./img/1.jpg" class="img-fluid mt-3">
+              <h4>Finding Your Perfect Shoes</h4>
+              <p>Promo from nuary 15 — 25, 2019</p>
+            </div>
+  
+            <div class="footerContact col-lg-3 mt-3">
+              <h5>Contact Info</h5>
+              <ul class="mt-4">
+                <li><i class="fa-solid fa-location-dot me-3"></i>203 Fake St. Mountain View, San Francisco, California, USA</li>
+                <li><i class="fa-solid fa-phone mt-3 me-3"></i>+2 392 3929 210</li>
+                <li><i class="fa-solid fa-envelope mt-3 me-3"></i>emailaddress@domain.com</li>
+  
+              </ul>
+  
+              <h4 class="mt-5">Subscribe</h4>
+              <div class="input-group mb-3">
+                <input type="text" class="form-control footerInput" placeholder="Username" aria-label="Username" aria-describedby="basic-addon1">
+                <button type="button" class="heroBtn" style="width: 80px; margin-right: 20px;">Send</button>
+              </div>
+            </div>
+          </div>
+        </div>
+        
+    </footer>
+      
+  
+  
+      
+  
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+      <script src="lib/owl.carousel.min.js"></script>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+      <script src="./js/main.js"></script>
+
+
+    </body>
+</html>

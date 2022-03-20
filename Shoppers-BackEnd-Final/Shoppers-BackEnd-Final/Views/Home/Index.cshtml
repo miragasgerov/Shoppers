@@ -1,0 +1,162 @@
+﻿@model HomeViewModel
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<main>
+    <section class="hero">
+        <div class="row">
+            <div class=" heroImg col-lg-12 d-flex">
+
+                <div class="col-lg-7 ">
+
+                </div>
+
+                @foreach (var item in Model.Heroes)
+                {
+                    <div class="heroText col-lg-4  d-flex flex-column justify-content-center ">
+                        <h1>
+                            @item.Title1 <br>
+                            @item.Title2
+                        </h1>
+                        <p>@item.Text</p>
+                        <button type="button" class="heroBtn">Shop Now</button>
+
+                    </div>
+
+                }
+
+
+
+            </div>
+
+        </div>
+    </section>
+
+    <section class="service">
+        <div class="container">
+            <div class="row">
+                @foreach (var item in Model.Services)
+                {
+                    <div class="serviceCard col-lg-4 mt-3 d-flex justify-content-center">
+                        <div class="serviceIcon">
+                            @Html.Raw(item.Icon)
+                        </div>
+
+                        <div class="serviceText">
+                            <h6>@item.Title</h6>
+                            <p>@item.Text</p>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </section>
+    <hr>
+    <section class="categories">
+        <div class="container">
+            <div class="row">
+
+                <div class="categoriesCard col-lg-4 d-flex justify-content-center  mt-3">
+                    <div class="catalogueImg">
+                        <img src="./img/cataloge3.jpg">
+                    </div>
+                    <div class="catalogueText">
+                        <h6>Collections</h6>
+                        <h2>Women</h2>
+                    </div>
+                </div>
+
+                <div class="categoriesCard col-lg-4 d-flex justify-content-center  mt-3">
+                    <div class="catalogueImg">
+                        <img src="./img/cataloge2.jpg">
+                    </div>
+                    <div class="catalogueText">
+                        <h6>Collections</h6>
+                        <h2>Children</h2>
+                    </div>
+                </div>
+
+                <div class="categoriesCard col-lg-4 d-flex justify-content-center  mt-3">
+                    <div class="catalogueImg">
+                        <img src="./img/cataloge1.jpg">
+                    </div>
+                    <div class="catalogueText">
+                        <h6>Collections</h6>
+                        <h2>Men</h2>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="container">
+
+            <div class="row">
+                <div class="featuredText col-lg-12">
+                    <h3 class="text-center">New Products</h3>
+                </div>
+            </div>
+            <div class="row  d-flex justify-content-center">
+                <div class="owl-carousel owl-theme  mt-5">
+
+                    @foreach (var Product in Model.Products)
+                    {
+                        if (Product.IsNew == true && Product.IsDeleted == false)
+                        {
+                            <div class="item d-flex justify-content-center">
+                                <div class="col-lg-4 d-flex justify-content-center" style="width: 22rem;">
+                                    <div class="card">
+                                        <a asp-action="shopdetail" asp-controller="shop" asp-route-id="@Product.Id">
+                                            <img src="~/uploads/product/@Product.ProductImages.FirstOrDefault(x=>x.IsPoster==true)?.Image" class="card-img-top" alt="...">
+                                        </a>
+
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">@Product.Name</h5>
+                                            <p class="card-text">@Product.Title</p>
+                                            <h5 class="card-title">@(Product.SalePrice.ToString("#.##"))₼</h5>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        }
+                    }
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="bigSale">
+        <div class="container">
+            <div class="row">
+                <div class="bigSaleText col-lg-12">
+                    <h3 class="text-center">Big Sale!</h3>
+                </div>
+            </div>
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <div class="bigSaleImg d-flex justify-content-end ">
+                        <img src="./img/sale.jpg" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-lg-6 mt-5">
+                    <div class="bigSaleText d-flex flex-column justify-content-center align-items-center mt-5">
+                        <h3>50% less in all items</h3>
+                        <p class="postMade">By <a href="#"> Carl Smith </a> • September 3, 2018</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quisquam iste dolor accusantium facere corporis ipsum animi deleniti fugiat. Ex, veniam?</p>
+                        <button type="button" class="heroBtn">Shop Now</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <hr>
+</main>

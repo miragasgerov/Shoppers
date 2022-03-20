@@ -1,0 +1,70 @@
+﻿
+@{
+    ViewData["Title"] = "wishlist";
+}
+
+<main>
+    <section class="breadCrumb">
+        <div class="container">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mt-3">
+                        <li class="breadcrumb-item active"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item" aria-current="page">Profile</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <section class="wishlist">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <table class="table">
+                        <thead>
+                        <th>Image</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Add Cart</th>
+                        <th>Remove</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Image">
+                                    <img src="~/img/cloth3.jpg" class="img-fluid">
+                                </td>
+                                <td data-label="Product">Top Up T-Shirt</td>
+                                <td data-label="Price">$49.00</td>
+                                <td data-label="Add Cart">
+                                    <button type="button" class="heroBtn">Add To Cart</button>
+                                </td>
+                                <td data-label="Remove">
+                                    <button type="button" class="heroBtn" style="width: 4rem;">X</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td data-label="Image">
+                                    <img src="~/img/cloth4.jpg" class="img-fluid">
+                                </td>
+                                <td data-label="Product">Top Up T-Shirt</td>
+                                <td data-label="Price">$49.00</td>
+                                <td data-label="Add Cart"><button type="button" class="heroBtn">Add To Cart</button>
+                                <td data-label="Remove">
+                                    <button type="button" class="heroBtn" style="width: 4rem;">X</button>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+</main>

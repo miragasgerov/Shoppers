@@ -1,0 +1,115 @@
+﻿@model  HomeViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<main>
+    <section class="breadCrumb">
+        <div class="container">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mt-3">
+                        <li class="breadcrumb-item active"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item" aria-current="page">About</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <section class="weStarter">
+        <div class="container">
+            <div class="row mt-5">
+                <div class="col-lg-6">
+                    <div class="weStarterImg d-flex justify-content-end ">
+                        <img src="./img/sale.jpg" class="img-fluid">
+                    </div>
+                </div>
+
+                <div class="col-lg-6  mt-lg-5">
+                    <div class="weStarterText">
+                        <h3>How We Started</h3>
+                        <p class="mt-4">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eius repellat, dicta at laboriosam, nemo exercitationem itaque eveniet architecto cumque, deleniti commodi molestias repellendus quos sequi hic fugiat asperiores illum. Atque, in, fuga excepturi corrupti error corporis aliquam unde nostrum quas.</p>
+                        <p class="mt-3">Accusantium dolor ratione maiores est deleniti nihil? Dignissimos est, sunt nulla illum autem in, quibusdam cumque recusandae, laudantium minima repellendus.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="team">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 text-center">
+                    <h3>The Team</h3>
+                </div>
+            </div>
+            <div class="row mt-5">
+
+                @foreach (var item in Model.Teams)
+                {
+                    <div class="teamCard mt-5 col-lg-3">
+                        <div class="teamImg">
+                            <img src="~/uploads/teams/@item.Image">
+                        </div>
+                        <div class="teamText text-center">
+                            <h5 class="mt-3">@item.Title</h5>
+                            <h6>@item.Position</h6>
+                            <p>@item.Text</p>
+                        </div>
+                    </div>
+
+                }
+
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+    <section class="service">
+        <div class="container">
+            <div class="row">
+                <div class="serviceCard col-lg-4 mt-3 d-flex justify-content-center">
+                    <div class="serviceIcon">
+                        <i class="fa-solid fa-truck firstIcon"></i>
+                    </div>
+
+                    <div class="serviceText">
+                        <h6>Free Shipping</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
+                    </div>
+                </div>
+
+                <div class="serviceCard  col-lg-4 mt-3 d-flex justify-content-center">
+                    <div class="serviceIcon">
+                        <i class="fa-solid fa-rotate-right"></i>
+                    </div>
+
+                    <div class="serviceText">
+                        <h6>Free Returns</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
+                    </div>
+                </div>
+
+
+                <div class="serviceCard  col-lg-4 mt-3 d-flex justify-content-center">
+                    <div class="serviceIcon">
+                        <i class="fa-solid fa-circle-question"></i>
+                    </div>
+
+                    <div class="serviceText">
+                        <h6>Customer Support</h6>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus at iaculis quam. Integer accumsan tincidunt fringilla.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <hr>
+
+</main>

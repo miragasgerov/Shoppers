@@ -1,0 +1,14 @@
+﻿
+@{ ViewData["Title"] = "Yeni Kateqoriya"; }
+@model Category
+<div class="container">
+    <h1>Edit</h1>
+    <form method="post">
+        <div class="mb-3">
+            <input asp-for="Name" class="form-control" placeholder="Category Name">
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Edit</button>
+    </form>
+</div>

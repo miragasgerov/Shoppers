@@ -1,0 +1,64 @@
+﻿
+
+@{ ViewData["Title"] = "Katagoriya";
+                int count = 0; }
+@model List<Category>
+<div class="container">
+    <h1 style="margin-top:1rem">Categories</h1>
+    <a style="margin-bottom:1rem" class="btn btn-primary" asp-action="create">New Category</a>
+    <div class="col-lg-12">
+        <form method="get" asp-action="index" class="my-3">
+            <div class="row d-flex align-items-center">
+                <div class="col-xl-3">
+                    <select class="form-control" name="deleted">
+                        <option value="">
+                            All Categories
+                        </option>
+                        <option value="true">Deleted Categories</option>
+                    </select>
+                </div>
+                <div class="col-xl-6">
+                    <input type="text" name="search" class="form-control filter" autocomplete="off" value="@ViewBag.search" id="exampleInputEmail1" placeholder="Search..." />
+                </div>
+                <button type="submit" class="btn btn-secondary my-2">Search</button>
+            </div>
+
+        </form>
+    </div>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Category Name</th>
+                <th scope="col"></th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var item in Model)
+            {
+                count++;
+                if (item.IsDeleted == false)
+                {
+                    <tr>
+                        <th scope="row">@count</th>
+                        <td>@item.Name</td>
+                        <td><a class="btn btn-success" asp-action="edit" asp-route-id="@item.Id">Edit</a></td>
+                        <td><a class="btn btn-danger delete-btn" data-id="@item.Id" data-name="category" asp-route-id="@item.Id">Delete</a></td>
+
+                    </tr>
+                }
+                else
+                {
+                    <tr>
+                        <th scope="row">@count</th>
+                        <td style="text-decoration:line-through;">@item.Name</td>
+                        <td><a class="btn btn-success edit-btn" data-id="@item.Id" data-name="category" asp-route-id="@item.Id">Edit</a></td>
+
+                    </tr>
+                }
+            }
+
+        </tbody>
+    </table>
+</div>

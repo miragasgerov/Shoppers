@@ -1,0 +1,223 @@
+﻿
+@{
+    ViewData["Title"] = "checkout";
+}
+
+
+@{
+    ViewData["Title"] = "checkout";
+}
+
+<main>
+    <section class="breadCrumb">
+        <div class="container">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mt-3">
+                        <li class="breadcrumb-item active"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item active"><a href="#">Cart</a></li>
+                        <li class="breadcrumb-item" aria-current="page">Checkout</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <section class="checkoutLogin">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12 border p-3">
+                    <div class="checkLogin">
+                        <p class="pt-3">Returning customer? <a href="login.html">Click here</a> to login</p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+
+    <section class="checkoutForm">
+        <div class="container">
+            <div class="row">
+                <div class="checkoutSec col-lg-12 d-flex">
+                    <div class="col-lg-6 border p-4">
+                        <form class="row g-3">
+                            <div class="col-md-12">
+                                <label for="inputState" class="form-label">Country</label>
+                                <select id="inputState" class="form-select">
+                                    <option selected>Azerbaijan</option>
+                                    <option>Turkey</option>
+                                    <option>Russian</option>
+                                    <option>England</option>
+                                    <option>France</option>
+                                </select>
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputFirstName" class="form-label">First Name</label>
+                                <input type="text" class="form-control" id="inputFirstName" aria-label="First name">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputLastName" class="form-label">Last Name</label>
+                                <input type="text" class="form-control" id="inputLastName" aria-label="Last name">
+                            </div>
+
+                            <div class="col-md-12">
+                                <label for="inputCompanyName" class="form-label">Company Name</label>
+                                <input type="text" class="form-control" id="inputCompanyName" aria-label="Company name">
+                            </div>
+
+
+                            <div class="col-12">
+                                <label for="inputAddress" class="form-label">Address</label>
+                                <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St">
+                            </div>
+                            <div class="col-12">
+                                <label for="inputAddress2" class="form-label">Address 2</label>
+                                <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="inputState" class="form-label">State / Country</label>
+                                <input type="text" class="form-control" id="inputState" aria-label="First name">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="inputPosta" class="form-label">Posta / Zip</label>
+                                <input type="text" class="form-control" id="inputPosta" aria-label="Last name">
+                            </div>
+
+
+                            <div class="col-md-6">
+                                <label for="inputEmail4" class="form-label">Email</label>
+                                <input type="email" class="form-control" id="inputEmail4">
+                            </div>
+
+                            <div class="col-md-6">
+                                <label for="inputNumber" class="form-label">Phone</label>
+                                <input type="number" class="form-control" id="inputNumber">
+                            </div>
+
+
+
+                            <div class="col-12">
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Create an account?
+                                    </label>
+                                </div>
+
+                                <div class="form-check mt-4">
+                                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                                    <label class="form-check-label" for="gridCheck">
+                                        Ship To A Different Address?
+                                    </label>
+                                </div>
+                            </div>
+
+                            <div class="col-12 mt-5">
+                                <label for="inputAddress" class="form-label">Order Notes</label>
+                                <textarea class="form-control" placeholder="Leave a comment here" id="floatingTextarea2" style="height: 100px"></textarea>
+                            </div>
+                        </form>
+                    </div>
+
+
+                    <div class="checkoutOrderSec col-lg-6 ps-5">
+                        <div class="col-lg-12 border p-5">
+                            <p>Enter your coupon code if you have one</p>
+                            <form class="d-flex">
+                                <div class="col-md-5">
+                                    <input type="text" class="form-control" id="inputCouponName" aria-label="First name">
+                                </div>
+
+                                <button type="button" class="heroBtn">Apply</button>
+                            </form>
+                        </div>
+
+                        <div class="yourOrderSec row mt-5 ps-3">
+                            <h4>Your Order</h4>
+
+                            <div class="orderTable col-lg-12 border p-5">
+                                <table class="table">
+                                    <thead>
+                                    <th>Product</th>
+                                    <th>Total</th>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+
+                                            <td data-label="Product">Top Up T-Shirt x 1	</td>
+                                            <td data-label="Price">$250.00</td>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td data-label="Product">Polo Shirt x 1		</td>
+                                            <td data-label="Price">$100.00</td>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td data-label="Product" style="font-weight: bold;">Cart Subtotal	</td>
+                                            <td data-label="Price">	$350.00</td>
+                                        </tr>
+
+                                        <tr>
+
+                                            <td data-label="Product" style="font-weight: bold;">Order Total </td>
+                                            <td data-label="Price" style="font-weight: bold;">	$350.00</td>
+                                        </tr>
+
+
+
+
+                                    </tbody>
+                                </table>
+
+                                <div class="row mt-5 ms-auto">
+                                    <div class="col-lg-12">
+                                        <div class="orderBank border p-3">
+                                            <a href="#">
+                                                <h6>Direct Bank Transfer</h6>
+                                            </a>
+                                        </div>
+
+                                        <div class="orderBank border p-3 mt-3">
+                                            <a href="#">
+                                                <h6>Cheque Payment</h6>
+                                            </a>
+                                        </div>
+
+                                        <div class="orderBank border p-3 mt-3">
+                                            <a href="#">
+                                                <h6>Paypal</h6>
+                                            </a>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="row ps-4 mt-5">
+                                    <a asp-action="finish" asp-controller="order">
+                                        <button type="button" class="heroBtn">Place Order</button>
+
+                                    </a>
+                                </div>
+                            </div>
+
+
+                        </div>
+
+
+
+                    </div>
+
+
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+</main>
+

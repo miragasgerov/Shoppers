@@ -1,0 +1,161 @@
+﻿@model ShopViewModel
+
+
+<main>
+    <section class="breadCrumb">
+        <div class="container">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mt-3">
+                        <li class="breadcrumb-item active"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item" aria-current="page">Tank Top T-Shirt</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="detail">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-5 ">
+                        <img src="~/uploads/product/@Model.Product.ProductImages.FirstOrDefault(x => x.IsPoster == false)?.Image" class="img-fluid">
+                </div>
+
+                <div class="detailText col-lg-7">
+
+                        <h1>@Model.Product.Name</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Pariatur, vitae, explicabo? Incidunt facere, natus soluta dolores iusto! Molestiae expedita veritatis nesciunt doloremque sint asperiores fuga voluptas, distinctio, aperiam, ratione dolore.</p>
+                        <p>Ex numquam veritatis debitis minima quo error quam eos dolorum quidem perferendis. Quos repellat dignissimos minus, eveniet nam voluptatibus molestias omnis reiciendis perspiciatis illum hic magni iste, velit aperiam quis.</p>
+                        <h4>@(Model.Product.SalePrice.ToString("#.##"))₼</h4>
+                    <div class="detailInput mt-4">
+                        <span class="me-4"> <input class="form-check-input detailCheck" type="checkbox" value="" id="flexCheckDefault">Small</span>
+                        <span class="me-4"> <input class="form-check-input detailCheck" type="checkbox" value="" id="flexCheckDefault">Medium</span>
+                        <span class="me-4"> <input class="form-check-input detailCheck" type="checkbox" value="" id="flexCheckDefault">Large</span>
+                        <span class="me-4"> <input class="form-check-input detailCheck" type="checkbox" value="" id="flexCheckDefault">Extra Large</span>
+
+                    </div>
+
+                    <div class="number">
+                        <span class="minus">-</span>
+                        <input type="text" value="1" />
+                        <span class="plus">+</span>
+                    </div>
+
+
+                    <a asp-action="cart" asp-controller="order">
+                        <button type="button" class="heroBtn" style="width:10rem;">Add To Cart</button>
+                    </a>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="featured">
+        <div class="container">
+
+            <div class="row">
+                <div class="featuredText col-lg-12">
+                    <h3 class="text-center">Featured Products</h3>
+                </div>
+            </div>
+            <div class="row  d-flex justify-content-center">
+                <div class="owl-carousel owl-theme  mt-5">
+                    @foreach (var Product in Model.NewProducts)
+                    {
+                        if (Product.IsNew == true && Product.IsDeleted == false)
+                        {
+                            <div class="item d-flex justify-content-center">
+                                <div class="col-lg-4 d-flex justify-content-center" style="width: 22rem;">
+                                    <div class="card">
+                                        <a asp-action="shopdetail" asp-controller="shop" asp-route-id="@Product.Id">
+                                            <img src="~/uploads/product/@Product.ProductImages.FirstOrDefault(x=>x.IsPoster==true)?.Image" class="card-img-top" alt="...">
+                                        </a>
+
+                                        <div class="card-body text-center">
+                                            <h5 class="card-title">@Product.Name</h5>
+                                            <p class="card-text">@Product.Title</p>
+                                            <h5 class="card-title">@(Product.SalePrice.ToString("#.##"))₼</h5>
+                                        </div>
+                                    </div>
+
+                                </div>
+                            </div>
+
+                        }
+                    }
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="detailComment">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <h3>3 Comments</h3>
+
+                    <div class="row">
+                        <div class="col-lg-6">
+                            @foreach (var item in Model.Product.ProductComments.Where(x => x.Status))
+                            {
+                                <div class="commentSec d-flex">
+                                    <div class="profileImgDetail mt-5">
+                                        <img src="~/img/profile.jpg">
+                                    </div>
+                                    <div class="commentText mt-5 ms-3">
+                                        <h5>@item.FullName</h5>
+
+                                        <h6>@item.CreatedAt.ToString("MMMM dd, yyyy HH:mm")</h6>
+                                        <p>@item.Text</p>
+                                    </div>
+                                </div>
+
+                            }
+
+
+
+                        </div>
+                        <div class="col-lg-6"></div>
+                    </div>
+
+                    <div class="row mt-5">
+                        <div class="leaveComment col-lg-6">  
+                            <form class="mt-2" asp-action="comment" method="post">
+                                @if (User.Identity.IsAuthenticated)
+                                {
+                                    <input asp-for="@Model.ProductComment.AppUser.Fullname" class="feedback-input" placeholder="Name" />
+                                    <input asp-for="@Model.ProductComment.AppUser.Email" class="feedback-input" placeholder="Email" />
+                                    <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
+                                    <button type="submit" class="btn btn-black">Post Comment</button>
+                                    <input type="hidden" name="productId" value="@Model.Product.Id" />
+                                }
+                                else
+                                {
+                                    <input name="fullname" class="feedback-input" placeholder="Name" />
+                                    <input name="email" class="feedback-input" placeholder="Email" />
+                                    <textarea name="text" class="feedback-input" placeholder="Comment"></textarea>
+                                    <button type="submit" class="btn btn-black">Post Comment</button>
+                                    <input type="hidden" name="productId" value="@Model.Product.Id" />
+                                }
+                            </form>
+
+                        </div>
+                        <div class="col-lg-6"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+</main>
+
+

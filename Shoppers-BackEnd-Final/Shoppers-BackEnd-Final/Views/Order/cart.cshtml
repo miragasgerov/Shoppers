@@ -1,0 +1,159 @@
+﻿
+@{
+    ViewData["Title"] = "cart";
+}
+
+
+
+@{
+    ViewData["Title"] = "cart";
+}
+
+<main>
+    <section class="breadCrumb">
+        <div class="container">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mt-3">
+                        <li class="breadcrumb-item active"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item" aria-current="page">Cart</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <section class="cardSec mt-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <table class="table">
+                        <thead>
+                        <th>Image</th>
+                        <th>Product</th>
+                        <th>Price</th>
+                        <th>Quantity</th>
+                        <th>Total</th>
+                        <th>Remove</th>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td data-label="Image">
+                                    <img src="~/img/cloth1.jpg" class="img-fluid">
+                                </td>
+                                <td data-label="Product">Top Up T-Shirt</td>
+                                <td data-label="Price">$49.00</td>
+                                <td data-label="Quantity">
+                                    <div class="number" style="margin: 0px !important;">
+                                        <span class="minus">-</span>
+                                        <input type="text" value="1" />
+                                        <span class="plus">+</span>
+                                    </div>
+                                </td>
+                                <td data-label="Total">$49.00</td>
+                                <td data-label="Remove">
+                                    <button type="button" class="heroBtn" style="width: 4rem;">X</button>
+                                </td>
+                            </tr>
+
+                            <tr>
+                                <td data-label="Image">
+                                    <img src="~/img/cloth1.jpg" class="img-fluid">
+                                </td>
+                                <td data-label="Product">Top Up T-Shirt</td>
+                                <td data-label="Price">$49.00</td>
+                                <td data-label="Quantity">
+                                    <div class="number" style="margin: 0px !important;">
+                                        <span class="minus">-</span>
+                                        <input type="text" value="1" />
+                                        <span class="plus">+</span>
+                                    </div>
+                                </td>
+                                <td data-label="Total">$49.00</td>
+                                <td data-label="Remove">
+                                    <button type="button" class="heroBtn" style="width: 4rem;">X</button>
+                                </td>
+                            </tr>
+
+
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="couponSec col-lg-6">
+                    <button type="button" class="heroBtn">Update Cart</button>
+                    <button type="button" class="shopBtn mt-5">Continue Shopping</button>
+
+                    <h4 class="mt-5">Coupon</h4>
+                    <p>Enter your coupon code if you have one.</p>
+
+                    <form class="d-flex">
+                        <div class="mb-3">
+                            <input type="text" class="form-control" id="exampleInputCoupon1" aria-describedby="couponHelp" placeholder="Coupon Code">
+                        </div>
+
+                        <button type="button" id="couponBtnCart" class="heroBtn  ms-5">Apply Coupon</button>
+                    </form>
+
+                </div>
+
+                <div class="cardTotal col-lg-6 mt-5">
+                    <div class="row">
+                        <div class="col-lg-5"></div>
+                        <div class="col-lg-7">
+                            <div class="row">
+                                <div class="col-lg-12 totalPrice">
+                                    <h4>Total Price</h4>
+                                </div>
+                            </div>
+
+                            <div class="row subTotal mt-5">
+
+                                <div class="subTotalPrice d-flex justify-content-between">
+                                    <div class="col-lg-6">
+                                        <span>Subtotal</span>
+                                    </div>
+                                    <div class=" col-lg-6">
+                                        <span>$230.00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row subTotal mt-5">
+
+                                <div class="subTotalPrice d-flex justify-content-between">
+                                    <div class="col-lg-6">
+                                        <span>Total</span>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <span>$230.00</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="row subTotal mt-5">
+
+                                <div class="col-lg-12">
+
+                                    <a asp-action="checkout" asp-controller="order">
+                                        <button type="button" class="heroBtn">Proceed to checkout</button>
+                                    </a>
+                                </div>
+                            </div>
+
+
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+</main>
+

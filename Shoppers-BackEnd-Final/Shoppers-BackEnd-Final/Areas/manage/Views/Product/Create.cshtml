@@ -1,0 +1,85 @@
+﻿
+@{ ViewData["Title"] = "Yeni Mehsul"; }
+@model Product
+<div class="container">
+    <h1>New Product</h1>
+    <form method="post" enctype="multipart/form-data">
+        <div class="row">
+            <div class="mb-3 col-xl-12">
+                <label asp-for="Name">Product Name</label>
+                <input asp-for="Name" class="form-control" placeholder="Product Name">
+                <span class="text-danger" asp-validation-for="Name"></span>
+            </div>
+            <div class="mb-3 col-xl-12">
+                <label asp-for="Title">Product Title</label>
+                <input asp-for="Title" class="form-control" placeholder="Product Title">
+                <span class="text-danger" asp-validation-for="Title"></span>
+            </div>
+
+            <div class="form-group col-md-3 col-xl-12">
+                <label asp-for="SubCategoryId">SubCategory</label>
+                <select class="form-control" asp-for="SubCategoryId" asp-items="@(new SelectList(ViewBag.SubCategory,"Id","Name"))"></select>
+                <span class="text-danger" asp-validation-for="SubCategoryId"></span>
+            </div>
+        </div>
+
+        <div class="row">
+
+            <div class="form-group col-md-3 col-xl-6">
+                <label asp-for="ColorIds">Colors</label>
+                <select multiple class="form-control bg-primary" style="color:white" asp-for="ColorIds" asp-items="@(new SelectList(ViewBag.ColorIds,"Id","Name"))"></select>
+                <span class="text-danger" asp-validation-for="ColorIds"></span>
+            </div>
+
+            <div class="form-group col-md-3 col-xl-6">
+                <label asp-for="SizeIds">Size</label>
+                <select multiple class="form-control  bg-primary" style="color:white;" asp-for="SizeIds" asp-items="@(new SelectList(ViewBag.SizeIds,"Id","Name"))"></select>
+                <span class="text-danger" asp-validation-for="SizeIds"></span>
+            </div>
+
+        </div>
+
+        <div class="row">
+            <div class="mb-3 col-xl-6">
+                <input asp-for="SalePrice" class="form-control" placeholder="Sale Price">
+                <span class="text-danger" asp-validation-for="SalePrice"></span>
+            </div>
+            <div class="mb-3 col-xl-6">
+                <input asp-for="CostPrice" class="form-control" placeholder="Cost Price">
+                <span class="text-danger" asp-validation-for="CostPrice"></span>
+            </div>
+            <div class="mb-3 col-xl-6">
+                <input asp-for="DiscountPrice" class="form-control" placeholder="Discount">
+                <span class="text-danger" asp-validation-for="DiscountPrice"></span>
+            </div>
+            <div class="mb-3 col-xl-6">
+                <input asp-for="Count" class="form-control" placeholder="Count">
+                <span class="text-danger" asp-validation-for="Count"></span>
+            </div>
+            <div class="form-check mx-auto">
+                <input style="width:1rem;height:1rem;" class="form-check-input" type="checkbox" asp-for="IsNew">
+                <label class="form-check-label" asp-for="IsNew">
+                    New Product
+                </label>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="mb-3 col-xl-6">
+                <input id="product-input1" asp-for="PosterImage" class="form-control" placeholder="Product Image(Poster)">
+                <span class="text-danger" asp-validation-for="PosterImage"></span>
+                <div id="product-img1"></div>
+            </div>
+            <div class="mb-3 col-xl-6">
+                <input id="product-input2" asp-for="ImageFiles" class="form-control" placeholder="Product Image">
+                <span class="text-danger" asp-validation-for="ImageFiles"></span>
+                <div id="product-img2"></div>
+            </div>
+        </div>
+        <div asp-validation-summary="ModelOnly"></div>
+
+        <button type="submit" class="btn btn-warning">Create</button>
+    </form>
+</div>
+

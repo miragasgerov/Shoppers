@@ -1,0 +1,16 @@
+﻿@{
+    ViewData["Title"] = "Create";
+}
+
+@model Size
+<div class="container">
+    <h1>New Size</h1>
+    <form method="post">
+        <div class="mb-3">
+            <input asp-for="Name" class="form-control" placeholder="Name">
+            <span class="text-danger" asp-validation-for="Name"></span>
+        </div>
+
+        <button type="submit" class="btn btn-primary">Create</button>
+    </form>
+</div>

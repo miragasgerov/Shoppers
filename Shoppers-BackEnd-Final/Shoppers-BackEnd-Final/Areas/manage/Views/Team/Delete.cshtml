@@ -1,0 +1,25 @@
+﻿@model Team
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container">
+    <div class="row">
+        <div class="col-lg-8 mx-auto d-flex justify-content-center">
+            <div class="card" style="width: 18rem;">
+                <div class="card-body">
+                    <h5 class="card-title">Title: @Model.Title</h5>
+                    <h5 class="card-title">Text: @Model.Text</h5>
+                    <h5 class="card-title">Position @Model.Position</h5>
+
+                    <form method="post" asp-action="delete" class="d-inline-block">
+                        <input name="Id" value="@Model.Id" type="hidden" />
+                        <button type="submit" class="btn btn-danger">Delete</button>
+                    </form>
+                    <a asp-action="index" class="btn btn-info">Go to back</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+

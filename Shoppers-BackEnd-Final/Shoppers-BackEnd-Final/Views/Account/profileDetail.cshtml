@@ -1,0 +1,158 @@
+﻿@model ProfileViewModel
+@{
+    ViewData["Title"] = "profileDetail";
+}
+
+<main>
+    <section class="breadCrumb">
+        <div class="container">
+            <div class="row">
+                <nav aria-label="breadcrumb">
+                    <ol class="breadcrumb mt-3">
+                        <li class="breadcrumb-item active"><a href="#">Home</a></li>
+                        <li class="breadcrumb-item" aria-current="page">Profile</li>
+                    </ol>
+                </nav>
+            </div>
+        </div>
+    </section>
+
+    <section class="profile-detail">
+        <div class="container">
+            <div class="row">
+                <section class="blok">
+                    <div class="blok-body">
+                        <!-- Nav tabs -->
+                        <ul class="nav tab-menu nav-pills col-sm-3 nav-stacked pr15">
+                            <li class="active" data-toggle="tab"><a href="#accountDetail">Account Detail</a></li>
+                            <li><a href="#cartInfo" data-toggle="tab">Cart</a></li>
+                            <li><a href="#wishlist" data-toggle="tab">Wishlist</a></li>
+                            <li>
+                                <button type="submit" asp-action="logout" asp-controller="account" class="heroBtn">Log out</button>
+                            </li>
+                        </ul>
+                        <!-- Tab panes -->
+                        <div class="tab-content col-sm-9">
+                            <div class="tab-pane well active in active" id="accountDetail">
+                                @await Html.PartialAsync("_MemberUpdateFormPartial",Model.Member) 
+                            </div>
+                            <div class="tab-pane well fade" id="cartInfo">
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <table class="table">
+                                            <thead>
+                                            <th>Image</th>
+                                            <th>Product</th>
+                                            <th>Price</th>
+                                            <th>Quantity</th>
+                                            <th>Total</th>
+                                            <th>Remove</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td data-label="Image">
+                                                        <img src="~/img/cloth1.jpg" class="img-fluid">
+                                                    </td>
+                                                    <td data-label="Product">Top Up T-Shirt</td>
+                                                    <td data-label="Price">$49.00</td>
+                                                    <td data-label="Quantity">
+                                                        <div class="number" style="margin: 0px !important;">
+                                                            <span class="minus">-</span>
+                                                            <input type="text" value="1" />
+                                                            <span class="plus">+</span>
+                                                        </div>
+                                                    </td>
+                                                    <td data-label="Total">$49.00</td>
+                                                    <td data-label="Remove">
+                                                        <button type="button" class="heroBtn" style="width: 4rem;">X</button>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td data-label="Image">
+                                                        <img src="~/img/cloth1.jpg" class="img-fluid">
+                                                    </td>
+                                                    <td data-label="Product">Top Up T-Shirt</td>
+                                                    <td data-label="Price">$49.00</td>
+                                                    <td data-label="Quantity">
+                                                        <div class="number" style="margin: 0px !important;">
+                                                            <span class="minus">-</span>
+                                                            <input type="text" value="1" />
+                                                            <span class="plus">+</span>
+                                                        </div>
+                                                    </td>
+                                                    <td data-label="Total">$49.00</td>
+                                                    <td data-label="Remove">
+                                                        <button type="button" class="heroBtn" style="width: 4rem;">X</button>
+                                                    </td>
+                                                </tr>
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="tab-pane well fade" id="wishlist">
+
+                                <div class="row">
+                                    <div class="col-lg-12">
+                                        <table class="table">
+                                            <thead>
+                                            <th>Image</th>
+                                            <th>Product</th>
+                                            <th>Price</th>
+                                            <th>Add Cart</th>
+                                            <th>Remove</th>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td data-label="Image">
+                                                        <img src="~/img/cloth3.jpg" class="img-fluid">
+                                                    </td>
+                                                    <td data-label="Product">Top Up T-Shirt</td>
+                                                    <td data-label="Price">$49.00</td>
+                                                    <td data-label="Add Cart">
+                                                        <button type="button" class="heroBtn">Add To Cart</button>
+                                                    </td>
+                                                    <td data-label="Remove">
+                                                        <button type="button" class="heroBtn" style="width: 4rem;">X</button>
+                                                    </td>
+                                                </tr>
+
+                                                <tr>
+                                                    <td data-label="Image">
+                                                        <img src="~/img/cloth4.jpg" class="img-fluid">
+                                                    </td>
+                                                    <td data-label="Product">Top Up T-Shirt</td>
+                                                    <td data-label="Price">$49.00</td>
+                                                    <td data-label="Add Cart"><button type="button" class="heroBtn">Add To Cart</button>
+                                                    <td data-label="Remove">
+                                                        <button type="button" class="heroBtn" style="width: 4rem;">X</button>
+                                                    </td>
+                                                </tr>
+
+
+                                            </tbody>
+                                        </table>
+                                    </div>
+                                </div>
+
+                            </div>
+
+
+
+                        </div>
+                    </div><!-- blok-body // -->
+                </section><!-- // blok -->
+            </div>
+        </div>
+
+    </section>
+
+
+
+    <hr>
+
+</main>
+
