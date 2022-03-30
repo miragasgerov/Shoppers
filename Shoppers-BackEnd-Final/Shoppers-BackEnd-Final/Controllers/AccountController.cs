@@ -131,25 +131,25 @@ namespace Shoppers_BackEnd_Final.Controllers
             return View();
         }
 
-        [HttpPost]
+                [HttpPost]
         [ValidateAntiForgeryToken]
         public async Task<IActionResult> Login(MemberLoginViewModel loginVM)
         {
             if (!ModelState.IsValid) return View();
 
-            AppUser user = _userManager.Users.FirstOrDefault(x => x.NormalizedUserName == loginVM.UserName.ToUpper() && x.IsAdmin == false);
+            AppUser user = await _userManager.FindByNameAsync(loginVM.UserName);
 
             if (user == null)
             {
-                ModelState.AddModelError("", "UserName or Password is incorrect!");
+                ModelState.AddModelError("UserName", "UserName or Password is incorrect!");
                 return View();
             }
 
-            var result = await _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false);
+            var result =  _signInManager.PasswordSignInAsync(user, loginVM.Password, false, false).Result;
 
             if (!result.Succeeded)
             {
-                ModelState.AddModelError("", "UserName or Password is incorrect!");
+                ModelState.AddModelError("Password", "UserName or Password is incorrect!");
                 return View();
             }
 
